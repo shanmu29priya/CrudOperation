@@ -1,0 +1,28 @@
+<div>
+  <input type="text" [(ngModel)]="name" placeholder="name"><input type="text" [(ngModel)]="age" placeholder="age"><input
+    type="text" [(ngModel)]="salary" placeholder="salary">
+  <button (click)="addemployee()">Add Employee</button>
+  <input type="text" [(ngModel)]="updatename" placeholder="name"><input type="text" [(ngModel)]="updateage" placeholder="age"><input
+    type="text" [(ngModel)]="updatesalary" placeholder="salary">
+  <button (click)="updateemployee()">Update Employee</button>
+  <div>
+    <table>
+      <tr>
+        <th style="border: 1px solid #000;">Name</th>
+        <th style="border: 1px solid #000;">Age</th>
+        <th style="border: 1px solid #000;">Salary</th>
+        <th style="border: 1px solid #000;">Delete</th>
+        <th style="border: 1px solid #000;">Update</th>
+      </tr>
+      <ng-container  *ngFor="let emp of emparray;index as i">
+        <tr>
+          <td style="border: 1px solid #000;">{{emp.name}}</td>
+          <td style="border: 1px solid #000;">{{emp.age}}</td>
+          <td style="border: 1px solid #000;">{{emp.salary}}</td>
+          <td style="border: 1px solid #000;"><button (click)="deleteemp(i)">Delete</button></td>
+          <td style="border: 1px solid #000;"><button (click)="updateemp(i)">Update</button></td>
+       </tr>
+      </ng-container>
+    </table>
+  </div>
+</div>
